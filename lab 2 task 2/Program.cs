@@ -2,7 +2,7 @@
 
 class Vehicle
 {
-    private double[] coordinates = new double[2];
+    protected double[] coordinates;
     protected double price;
     protected double speed;
     protected int year;
@@ -36,7 +36,7 @@ class Plane : Vehicle
 
     public new void print()
     {
-        Console.WriteLine("Plane:")
+        Console.WriteLine("Plane:");
         base.print();
         Console.WriteLine("passengers: " + pass);
     }
@@ -67,8 +67,10 @@ class Program
     static void Main()
     {
         double[] cord = [12.3, 32.1, 1000];
+        Vehicle car = new Vehicle(200000, 90, 2018, cord);
         Plane plane = new Plane(1000000, 890, 2010, 100, cord);
-        Ship ship= new Ship(1000000, 890, 2010, 100, "Samara", cord);
+        Ship ship= new Ship(1000000, 20, 1990, 500, "Samara", cord);
+        car.print();
         plane.print();
         ship.print();
     }
